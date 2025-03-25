@@ -7,7 +7,6 @@ A frontend-only car recommendation system for Indian buyers with real-time filte
 - **Dark Theme UI** - Modern interface with smooth animations
 - **Smart Filters** - Budget slider (₹3L-₹50L), fuel type, car category
 - **Car Comparison** - Compare 3 cars side-by-side
-- **Demo Auth** - Login/Signup flow with session management
 - **Responsive Design** - Mobile-first approach
 
 ## 🛠 Tech Stack
