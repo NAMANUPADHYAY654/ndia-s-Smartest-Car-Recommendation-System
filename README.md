@@ -1,2 +1,23 @@
-# ndia-s-Smartest-Car-Recommendation-System
-A frontend-only web app built with HTML/CSS/JS that helps Indian users find their ideal car through intuitive filters (budget, fuel type, car type). Features a modern dark UI, real-time comparisons of popular Indian models (Tata, Mahindra, Maruti), price displays in INR, and a demo login system. 
+# 🚗 DarkDrive - Smart Car Advisor
+
+A frontend-only car recommendation system for Indian buyers with real-time filters and comparisons.
+
+## 🌟 Features
+
+- **Dark Theme UI** - Modern interface with smooth animations
+- **Smart Filters** - Budget slider (₹3L-₹50L), fuel type, car category
+- **Car Comparison** - Compare 3 cars side-by-side
+- **Demo Auth** - Login/Signup flow with session management
+- **Responsive Design** - Mobile-first approach
+
+## 🛠 Tech Stack
+
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Storage**: `localStorage`, `sessionStorage`
+- **Design**: CSS Grid, Flexbox, Variables
+
+## 🚀 Quick Start
+
+1. Clone repo:
+```bash
+git clone https://github.com/yourusername/darkdrive.git
