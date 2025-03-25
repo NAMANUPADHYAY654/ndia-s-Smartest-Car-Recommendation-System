@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkDrive - Car Advisor</title>
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --dark-card: #2d2d2d;
+            --accent: #00ff88;
+            --text: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--dark-card);
+            border-radius: 10px;
+        }
+
+        .nav-item {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* Car Cards */
+        .featured-cars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .car-card {
+            background: var(--dark-card);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .car-details {
+            padding: 1.5rem;
+        }
+
+        .car-price {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--dark-card);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background: #3d3d3d;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--accent);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-links">
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#about" class="nav-item">About Us</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+
+        <section class="hero" id="home">
+            <h1>Find Your Perfect Ride</h1>
+            <p>India's Smartest Car Recommendation System</p>
+        </section>
+
+        <section class="featured-cars" id="cars">
+            <!-- Car cards will be inserted here by JavaScript -->
+        </section>
+
+        <section class="about-section" id="about">
+            <h2>About DarkDrive</h2>
+            <p>Founded in 2020 under the leadership of Naman Upadhyay, DarkDrive revolutionizes car recommendations in India.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="ceo.jpg" alt="CEO" class="member-image">
+                    <h3>Naman Upadhyay</h3>
+                    <p>CEO & Founder</p>
+                    <p>B.Tech CSE Graduate</p>
+                </div>
+                <div class="team-member">
+                    <img src="cto.jpg" alt="CTO" class="member-image">
+                    <h3>Priya Patel</h3>
+                    <p>Chief Technology Officer</p>
+                    <p>AI/ML Expert</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-info" id="contact">
+            <h2>Contact Us</h2>
+            <p>📧 contact@darkdrive.in</p>
+            <p>📞 +91 98765 43210</p>
+            <p>🏢 Mumbai, India</p>
+        </section>
+    </div>
+
+    <script>
+        const cars = [
+            {
+                brand: "Tata",
+                model: "Nexon EV Max",
+                price: 17.5,
+                fuel: "electric",
+                features: ["Sunroof", "Connected Car", "Ventilated Seats"],
+                image: "nexon-ev.jpg"
+            },
+            {
+                brand: "Mahindra",
+                model: "Thar",
+                price: 15.5,
+                fuel: "diesel",
+                features: ["4WD", "Convertible Top", "Off-road"],
+                image: "thar.jpg"
+            },
+            {
+                brand: "Maruti Suzuki",
+                model: "Brezza",
+                price: 9.5,
+                fuel: "petrol",
+                features: ["Apple CarPlay", "Rear Camera", "ABS"],
+                image: "brezza.jpg"
+            }
+        ];
+
+        function renderCars() {
+            const container = document.getElementById('cars');
+            container.innerHTML = cars.map(car => `
+                <div class="car-card">
+                    <img src="${car.image}" class="car-image" alt="${car.model}">
+                    <div class="car-details">
+                        <h3>${car.brand} ${car.model}</h3>
+                        <div class="car-price">₹ ${(car.price * 100000).toLocaleString()}</div>
+                        <ul>${car.features.map(f => `<li>✓ ${f}</li>`).join('')}</ul>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', renderCars);
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
